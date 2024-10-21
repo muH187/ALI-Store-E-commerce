@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-shape-divider-bottom-1728530644 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1728530644 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 123px;
+}
+
+.custom-shape-divider-bottom-1728530644 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.numbering-class {
+    @apply bg-blue-300 inline-block py-2 px-4 rounded-[100%] text-xl font-[500] my-3
+}

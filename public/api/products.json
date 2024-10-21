@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop",
+        "category": "Computers",
+        "brand": "ExampleBrand",
+        "price": 999.99,
+        "stock": 50,
+        "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256 GB SSD, and a 14-inch FHD Display.",
+        "image": "/laptop.png"
+    },
+    {
+        "id": 2,
+        "name": "Headphone",
+        "category": "Accessories",
+        "brand": "ExampleBrand",
+        "price": 500,
+        "stock": 10,
+        "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256 GB SSD, and a 14-inch FHD Display.",
+        "image": "/headphone.png"
+    },
+    {
+        "id": 3,
+        "name": "Appliances",
+        "category": "Accessories",
+        "brand": "ExampleBrand",
+        "price": 250,
+        "stock": 58,
+        "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256 GB SSD, and a 14-inch FHD Display.",
+        "image": "/heroImage.png"
+    },
+    {
+        "id": 4,
+        "name": "iPhone",
+        "category": "Mobile",
+        "brand": "ExampleBrand",
+        "price": 1200,
+        "stock": 129,
+        "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256 GB SSD, and a 14-inch FHD Display.",
+        "image": "/mobiles.png"
+    }
+
+]
