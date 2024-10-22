@@ -177,7 +177,7 @@
   <template id="productTemplate">
     <div id="cardValue" class="card border rounded-lg shadow-lg p-4 max-w-sm bg-white my-3">
       <article class="information space-y-4">
-        <span class="category text-sm text-gray-500"></span>
+        <span class="productCategory text-sm text-gray-500"></span>
         
         <div class="imageContainer">
           <img class="productImage object-cover h-60 mx-auto" src="" alt="">
@@ -208,9 +208,9 @@
         <div class="productQuantityElement space-y-2">
           <p class="productProperty text-sm">Quantity (Pieces)</p>
           <div class="stockElement flex items-center space-x-2">
-            <button class="cartIncrement bg-gray-200 px-2 py-1 rounded-md">+</button>
+            <button onclick="incrementBtn()" class="cartIncrement bg-gray-200 px-2 py-1 rounded-md">+</button>
             <p class="productQuantity font-semibold text-gray-800">1</p>
-            <button class="cartDecrement bg-gray-200 px-2 py-1 rounded-md">-</button>
+            <button onclick="decrementBtn()" class="cartDecrement bg-gray-200 px-2 py-1 rounded-md">-</button>
           </div>
         </div>
         
@@ -318,7 +318,7 @@
   <!-- End Footer Section -->
 
 
-  <script type="module" src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
