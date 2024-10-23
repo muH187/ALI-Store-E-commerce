@@ -68,12 +68,22 @@ products.forEach((product) => {
 })
 
 const incrementBtn = (event) => {
-    
+    const productCard = event.target.closest('.card')
+    const productQuantity = productCard.querySelector('.productQuantity')
+
+    let quantity = parseInt(productQuantity.textContent)
+    quantity++
+    productQuantity.textContent = quantity
 }
-const decrementBtn = () => {
+const decrementBtn = (event) => {
+
+    const productCard = event.target.closest('.card')
+    const productQuantity = productCard.querySelector('.productQuantity')
     
+    let quantity = parseInt(productQuantity.textContent)
+
     if(quantity > 1) {
         quantity--
-        document.querySelector('.productQuantity').textContent = quantity
+        productQuantity.textContent = quantity
     }
 }
