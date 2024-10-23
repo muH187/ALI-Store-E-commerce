@@ -65,12 +65,6 @@ products.forEach((product) => {
     productCard.dataset.productId = product.id
 
     productContainer.append(productClone)
-
-    productClone.querySelector('.addCartBtn').addEventListener('click', (event) => {
-        const productId = product.id
-        const productStock = product.stock
-        addToCart(event, productId, productStock)
-    })
   
 })
 
@@ -98,16 +92,16 @@ const decrementBtn = (event) => {
 // ----- End Quantity Increment and Decrement Functionality -----
 
 // ----- Start Add To Cart -----
+const addToCart = () => {
+    const cartTemplate = document.getElementById('cartTemplate')
+    const productCart = document.importNode(cartTemplate.content, true)
 
-const addToCart = (event, productId, productStock) => {
-    const productCard = event.target.closest('.card')
-    const productQuantity = productCard.querySelector('.productQuantity')
-    const productPrice = productCard.querySelector('.productPrice')
+    const {category, image, name, price} = products
 
-    let quantity = parseInt(productQuantity.textContent)
-    let price = parseFloat(productPrice.textContent.replace("$", ""))
-    let stock = parseInt(productStock)
-
-    console.log(productId, quantity, price, stock)
+    productCart.querySelector('productCategory').textContent = category
+    productCart.querySelector('productImage').src = image
+    productCart.querySelector('productImage').alt = name
+    productCart.querySelector('productPrice').textContent = `$${price}`
+    
 }
 // ----- End Add To Cart -----

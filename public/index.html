@@ -214,7 +214,7 @@
           </div>
         </div>
         
-        <button class="addCartBtn w-full bg-blue-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-blue-700">
+        <button onclick="addToCart()" class="addCartBtn w-full bg-blue-600 text-white py-2 px-4 rounded-md font-semibold hover:bg-blue-700">
           <i class="fa-solid fa-cart-shopping"></i> Add To Cart
         </button>
       </article>
@@ -224,6 +224,32 @@
   <!-- End Product Template Section -->
 
   <!-- End Our Product Section -->
+
+  <!-- Start Add To Cart Page -->
+   <section>
+    <div class="checkoutContainer">
+
+    </div>
+   </section>
+
+   <template id="cartTemplate">
+    <article class="border border-black">
+      <span class="productCategory"></span>
+      <figure class="imageContainer">
+        <img class="productImage" src="" alt="">
+      </figure>
+      <span class="productPrice"></span>
+      <div class="productQuantityElement space-y-2">
+        <div class="stockElement flex items-center space-x-2">
+          <button onclick="incrementBtn(event)" class="cartIncrement bg-gray-200 px-2 py-1 rounded-md">+</button>
+          <p class="productQuantity font-semibold text-gray-800">1</p>
+          <button onclick="decrementBtn(event)" class="cartDecrement bg-gray-200 px-2 py-1 rounded-md">-</button>
+        </div>
+      </div>
+      <button class="removeBtn bg-black text-white font-[500] text-xl px-4 py-1">Remove</button>
+    </article>
+   </template>
+  <!-- End Add To Cart Page -->
 
   <!-- Start Why choose section -->
   <section>
