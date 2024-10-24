@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Carts</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <!-- Start Add To Cart Page -->
+   <section>
+    <div class="checkoutContainer">
+        <a id="backToShopping" class="text-2xl font-[500] hover:text-slate-600" href="index.html">Continue Shopping</a>
+    </div>
+   </section>
+
+   <template id="cartTemplate">
+    <article class="border border-black">
+      <span class="productCategory"></span>
+      <figure class="imageContainer">
+        <img class="productImage" src="" alt="">
+      </figure>
+      <span class="productPrice"></span>
+      <div class="productQuantityElement space-y-2">
+        <div class="stockElement flex items-center space-x-2">
+          <button onclick="incrementBtn(event)" class="cartIncrement bg-gray-200 px-2 py-1 rounded-md">+</button>
+          <p class="productQuantity font-semibold text-gray-800">1</p>
+          <button onclick="decrementBtn(event)" class="cartDecrement bg-gray-200 px-2 py-1 rounded-md">-</button>
+        </div>
+      </div>
+      <button class="removeBtn bg-black text-white font-[500] text-xl px-4 py-1">Remove</button>
+    </article>
+   </template>
+  <!-- End Add To Cart Page -->
+
+  <script src="cart.js"></script>
+</body>
+</html>

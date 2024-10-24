@@ -1,5 +1,6 @@
 const productContainer = document.getElementById('productContainer')
 const productTemplate = document.getElementById('productTemplate')
+const checkoutContainer = document.querySelector('.checkoutContainer')
 
 let quantity = 1
 
@@ -92,16 +93,31 @@ const decrementBtn = (event) => {
 // ----- End Quantity Increment and Decrement Functionality -----
 
 // ----- Start Add To Cart -----
-const addToCart = () => {
-    const cartTemplate = document.getElementById('cartTemplate')
-    const productCart = document.importNode(cartTemplate.content, true)
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []
 
-    const {category, image, name, price} = products
-
-    productCart.querySelector('productCategory').textContent = category
-    productCart.querySelector('productImage').src = image
-    productCart.querySelector('productImage').alt = name
-    productCart.querySelector('productPrice').textContent = `$${price}`
+const addToCart = (productId) => {
+    const product = products.find(p => p.id === productId)
     
+    if(!product) return
+
+    const existingItem = cartItems.find(item => item.id === productId)
+
+    if(existingItem) {
+        existingItem.quantity += quantity
+    } else {
+        cartItems.push({...product, quantity})
+    }
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
 }
+
+
+
+productContainer.addEventListener('click', (event) => {
+    if(event.target.classList.contains('addCartBtn')) {
+        const productCard = event.target.closest('.card')
+        const productId = parseInt(productCard.dataset.productId)
+        addToCart(productId)
+    }
+})
 // ----- End Add To Cart -----
