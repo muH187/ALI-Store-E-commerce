@@ -1,5 +1,7 @@
 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
+const removeBtn = document.getElementById('removeBtn')
+
 const render = () => {
     const checkoutContainer = document.querySelector('.checkoutContainer'); 
     checkoutContainer.innerHTML = ''; 
@@ -18,6 +20,7 @@ const render = () => {
         productCart.querySelector('.productCategory').textContent = item.category;
         productCart.querySelector('.productImage').src = item.image;
         productCart.querySelector('.productImage').alt = item.name;
+        productCart.querySelector('.productName').textContent = item.name
         productCart.querySelector('.productPrice').textContent = `$${item.price}`;
         productCart.querySelector('.productQuantity').textContent = item.quantity;
 
@@ -27,3 +30,8 @@ const render = () => {
 
 
 render();
+
+removeBtn.addEventListener('click', (event) => {
+    const card = document.querySelector('.card')
+    const productCart = event.target.closest('.card')
+})

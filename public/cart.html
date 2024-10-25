@@ -7,28 +7,51 @@
     <link rel="stylesheet" href="output.css">
 </head>
 <body>
+  <!-- Start Header -->
+  <header>
+    <section class="bg-black text-white py-2 sticky">
+      <div class="container text-center font-[500]">
+        <p>Free Shipping Across Pakistan | Limited Edition | 20% Discount Available</p>
+      </div>
+    </section>
+    <section class="w-[100rem] mx-auto">
+      <nav class="flex items-center justify-between">
+        <img class="w-72 h-32" src="./images/logo.png" alt="">
+        <ul class="flex items-center gap-5 text-xl font-[500]">
+          <li><a href="/">Home</a></li>
+          <li><a href="">Products</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Contact Us</a></li>
+          <li class="bg-black text-white text-lg shadow-lg py-2 px-3 rounded-md"><a href="cart.html"><i
+                class="fa-solid fa-cart-shopping mr-1"> 0 </i></a></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <!-- End Header -->
     <!-- Start Add To Cart Page -->
    <section>
-    <div class="checkoutContainer">
+    <div class="checkoutContainer mt-20">
         <a id="backToShopping" class="text-2xl font-[500] hover:text-slate-600" href="index.html">Continue Shopping</a>
     </div>
    </section>
 
    <template id="cartTemplate">
-    <article class="border border-black">
-      <span class="productCategory"></span>
+    <article class="card border border-slate-300 h-32 w-[95rem] mx-auto flex items-center justify-around">
+      <span class="productCategory bg-blue-300 rounded-md px-3 py-1 font-[500]"></span>
       <figure class="imageContainer">
-        <img class="productImage" src="" alt="">
+        <img class="productImage h-20 w-28" src="" alt="">
       </figure>
-      <span class="productPrice"></span>
-      <div class="productQuantityElement space-y-2">
+      <span class="productName"></span>
+      <span class="productPrice text-xl"></span>
+      <div class="productQuantityElement space-y-2 border border-slate-300">
         <div class="stockElement flex items-center space-x-2">
-          <button onclick="incrementBtn(event)" class="cartIncrement bg-gray-200 px-2 py-1 rounded-md">+</button>
-          <p class="productQuantity font-semibold text-gray-800">1</p>
-          <button onclick="decrementBtn(event)" class="cartDecrement bg-gray-200 px-2 py-1 rounded-md">-</button>
+          <button onclick="incrementBtn(event)" class="cartIncrement bg-gray-200 font-bold px-5 py-1">+</button>
+          <p class="productQuantity font-semibold text-gray-800 px-5">1</p>
+          <button onclick="decrementBtn(event)" class="cartDecrement bg-gray-200 font-bold px-5 py-1">-</button>
         </div>
       </div>
-      <button class="removeBtn bg-black text-white font-[500] text-xl px-4 py-1">Remove</button>
+      <button id="removeBtn" class="bg-black text-white font-[500] h-10 px-3 rounded-md">Remove</button>
     </article>
    </template>
   <!-- End Add To Cart Page -->
