@@ -109,6 +109,7 @@ const addToCart = (productId) => {
     }
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    
 }
 
 
