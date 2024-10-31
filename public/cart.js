@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
     const render = () => {
+        checkoutContainer.innerHTML = '';
+
         if (cartItems.length === 0) {
             checkoutContainer.innerHTML = '<a id="backToShopping" class="text-2xl font-[500] hover:text-slate-600" href="index.html">Continue Shopping</a>'
             checkoutContainer.innerHTML += '<p>Your cart is empty.</p>'
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         cartItems.forEach((item, index) => {
-            checkoutContainer.innerHTML = '';
+
             const cartTemplate = document.getElementById('cartTemplate')
             const productCart = document.importNode(cartTemplate.content, true)
             productCart.querySelector('.productCategory').textContent = item.category

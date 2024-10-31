@@ -118,6 +118,7 @@ productContainer.addEventListener('click', (event) => {
     if(event.target.classList.contains('addCartBtn')) {
         const productCard = event.target.closest('.card')
         const productId = parseInt(productCard.dataset.productId)
+
         addToCart(productId)
     }
 })
