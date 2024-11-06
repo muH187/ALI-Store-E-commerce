@@ -26,3 +26,7 @@
 .numbering-class {
     @apply bg-blue-300 inline-block py-2 px-4 rounded-[100%] text-xl font-[500] my-3
 }
+
+.toast {
+    @apply bg-black text-white w-2 text-xl font-[500] py-1 px-3 sticky top-10 right-10
+}

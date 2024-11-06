@@ -1,6 +1,7 @@
 const productContainer = document.getElementById('productContainer')
 const productTemplate = document.getElementById('productTemplate')
 const checkoutContainer = document.querySelector('.checkoutContainer')
+const toastContainer = document.querySelector('.toastContainer')
 
 let quantity = 1
 
@@ -118,8 +119,19 @@ productContainer.addEventListener('click', (event) => {
     if(event.target.classList.contains('addCartBtn')) {
         const productCard = event.target.closest('.card')
         const productId = parseInt(productCard.dataset.productId)
-
+        toastFunc()
         addToCart(productId)
     }
 })
 // ----- End Add To Cart -----
+
+// ----- Start Notification Toast -----
+
+const toastFunc = () => {
+    const toastDiv = document.createElement('div')
+    toastDiv.textContent = "The product has been added."
+    toastDiv.classList = 'toast '
+    toastContainer.appendChild(toastDiv)
+}
+
+// ----- End Notification Toast -----
